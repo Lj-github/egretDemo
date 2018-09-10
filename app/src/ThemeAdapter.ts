@@ -55,13 +55,8 @@ class ThemeAdapter implements eui.IThemeAdapter {
             }, this);
         }
         else if (typeof generateEUI2 !== 'undefined') {
-            let file = "resource/" + EzConfig.EUI_CONFIG_PATH
-            if (EzConfig.isWeixinRemoteEnabled){
-                // file = EzConfig.URL_WX_REMOTE_RESOURCE + file
-            }
-            RES.getResByUrl(file, (data, url) => {
+            RES.getResByUrl("resource/gameEui.json", (data, url) => {
                 window["JSONParseClass"]["setData"](data);
-                onResGet(data);
                 egret.callLater(() => {
                     onSuccess.call(thisObject, generateEUI2);
                 }, this);
