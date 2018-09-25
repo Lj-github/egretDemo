@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outFile": "bin/thirdLibs.js",
+        "allowJs": true
+    },
+    "files": [
+		"src/EasyMacro.js",
+		"src/Math.uuid.js",
+        "src/pako.js",
+		"src/store.js"
+    ]
+}

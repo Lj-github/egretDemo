@@ -1,0 +1,4 @@
+{
+    "name":"thirdLibs",
+    "typings":"libs/pako.d.ts"
+}

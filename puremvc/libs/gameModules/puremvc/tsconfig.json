@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outFile": "bin/puremvc.js",
+        "allowJs": true
+    },
+    "files": [
+        "src/puremvc-1.0.1.js"
+    ]
+}
