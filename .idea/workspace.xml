@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4100fc-8628-4cb6-8885-a0a8184c9dce" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normalDemo/bin-debug/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/bin-debug/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normalDemo/egretProperties.json" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/egretProperties.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normalDemo/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normalDemo/src/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/src/Main.ts" afterDir="false" />
-    </list>
+    <list default="true" id="dd4100fc-8628-4cb6-8885-a0a8184c9dce" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,11 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalDemo/src/Main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="69" column="51" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="104">
+              <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="awesome.proto" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -54,15 +57,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="awesome.proto" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -119,8 +113,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
-    <option name="y" value="28" />
+    <option name="x" value="129" />
+    <option name="y" value="133" />
     <option name="width" value="1920" />
     <option name="height" value="979" />
   </component>
@@ -262,7 +256,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="28" width="1920" height="979" extended-state="0" />
+    <frame x="480" y="431" width="1920" height="979" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -471,17 +465,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
+    <entry file="file://$PROJECT_DIR$/normalDemo/src/Main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="104">
+          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/src/Main.ts">
+    <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="69" column="51" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="51" />
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
