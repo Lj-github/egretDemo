@@ -62,6 +62,9 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
+        // 自动寻路  例子
+        this.addChild( new Game());
+
 
         protobuf.load("resource/proto/awesome.proto", function (err, root) {
             if (err)
