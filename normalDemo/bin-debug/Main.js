@@ -123,6 +123,10 @@ var Main = (function (_super) {
      */
     Main.prototype.createGameScene = function () {
         var _this = this;
+        gt.size = {
+            width: egret.MainContext.instance.stage.stageWidth,
+            height: egret.MainContext.instance.stage.stageHeight
+        };
         gp.initAllMessage("resource/proto/awesome.proto", function () {
             // 自动寻路  例子
             var p = new Game();
@@ -130,13 +134,16 @@ var Main = (function (_super) {
             _this.addChild(p);
             gt.SocketClient = new SocketClient();
             //ws://localhost:
-            // gt.SocketClient.connectToCoreServer("localhost","8081/socket")
-            // gt.SocketClient.registerOnEvent(1,this.onres,this)
-            gt.size = {
-                width: egret.MainContext.instance.stage.stageWidth,
-                height: egret.MainContext.instance.stage.stageHeight
-            };
+            gt.SocketClient.connectToCoreServer("localhost", "8081/socket", function () {
+                gt.SocketClient.registerOnEvent(gp.AwesomeMessage22, _this.onres, _this);
+                // let msg = new gp.AwesomeMessage()
+                // gt.SocketClient.send(msg)
+            }, _this);
         }, this);
+    };
+    Main.prototype.onres = function (msg) {
+        console.log(msg);
+        console.log(msg.test);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

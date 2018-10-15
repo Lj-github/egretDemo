@@ -56,7 +56,7 @@ class SocketClient extends egret.HashObject {
     */
     public registerOnEvent(event_id, cb, target, once?) {
         if (typeof event_id == 'object') {
-            event_id = event_id.id
+            event_id = event_id.name
         }
         let events: Array<any> = this.eventMaps[event_id.toString()]
         if (!events) {
@@ -115,7 +115,7 @@ class SocketClient extends egret.HashObject {
         return
     }
 
-    public connectToCoreServer(host, port) {
+    public connectToCoreServer(host:String, port:string,cb:Function,cbTar:any) {
         // timeOutReconnectClear()
         // timeOutReconnectInit()
         let self = this
@@ -135,12 +135,18 @@ class SocketClient extends egret.HashObject {
             //链接失败
             socket.onerror = this.onerror
             // 连接成功
-            socket.onopen = this.onopen
+            socket.onopen = ()=>{
+                cb.call(cbTar)
+            } //this.onopen.call(cb)
             // 断开连接
             socket.onclose = this.onclose
 
             // 收到指令
-            socket.onmessage = this.onmessage
+            socket.onmessage =(event)=>{
+                let data = event.data
+                this.messageList.push(this.decode(data))
+
+            }
             this.socket = socket
             this.beginIntvall()
         } else {
@@ -151,10 +157,27 @@ class SocketClient extends egret.HashObject {
     }
 
     public send(packet, isSyncMessage?: boolean) {
+        // Exemplary payload
+        var payload = {test: "test22"};
+        // Verify the payload if necessary (i.e. when possibly incomplete or invalid)
+        //let obj = new  gp.AwesomeMessage22();
+        var errMsg =  gp.AwesomeMessage22.verify(payload);
+        // let d = new gp.AwesomeMessage22()
+        // d.verify()
+        if (errMsg)
+            throw Error(errMsg);
+        // Create a new message
+        var message = gp.AwesomeMessage22.create(payload); // or use .fromObject if conversion is necessary
+        console.log('message', message)
+        // Encode a message to an Uint8Array (browser) or Buffer (node)
+        var buffer =  gp.AwesomeMessage22.encode(message).finish();
+        this.socket.send(buffer)
 
     }
 
-    public onopen() {
+    public onopen(cb:Function) {
+
+
         Logger.error('The connect begin!')
     }
 
@@ -166,16 +189,22 @@ class SocketClient extends egret.HashObject {
         Logger.error('The connect is lost!')
     }
 
-    public onmessage(event) {
-        let data = event.data
-        this.messageList.push(this.decode(data))
 
-    }
-    decode(data){
+    decode(buffer:Uint8Array){
 
-
-
-
+        var message =gp.AwesomeMessage.decode(buffer); // 接受的是这个
+        // ... do something with message
+        console.log('message', message)
+        // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
+        // Maybe convert the message back to a plain object
+        var object =gp.AwesomeMessage.toObject(message, {
+            longs: String,
+            enums: String,
+            bytes: String,
+            // see ConversionOptions
+        });
+        console.log('object', object)
+        return object
     }
     addMessageToProcess(){
 

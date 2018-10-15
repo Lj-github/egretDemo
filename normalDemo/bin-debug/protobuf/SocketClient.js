@@ -63,7 +63,7 @@ var SocketClient = (function (_super) {
     */
     SocketClient.prototype.registerOnEvent = function (event_id, cb, target, once) {
         if (typeof event_id == 'object') {
-            event_id = event_id.id;
+            event_id = event_id.name;
         }
         var events = this.eventMaps[event_id.toString()];
         if (!events) {
@@ -117,7 +117,7 @@ var SocketClient = (function (_super) {
         });
         return;
     };
-    SocketClient.prototype.connectToCoreServer = function (host, port) {
+    SocketClient.prototype.connectToCoreServer = function (host, port, cb, cbTar) {
         // timeOutReconnectClear()
         // timeOutReconnectInit()
         var self = this;
@@ -138,7 +138,9 @@ var SocketClient = (function (_super) {
             //链接失败
             socket.onerror = this.onerror;
             // 连接成功
-            socket.onopen = this.onopen;
+            socket.onopen = function () {
+                cb.call(cbTar);
+            }; //this.onopen.call(cb)
             // 断开连接
             socket.onclose = this.onclose;
             // 收到指令
@@ -153,8 +155,23 @@ var SocketClient = (function (_super) {
         return;
     };
     SocketClient.prototype.send = function (packet, isSyncMessage) {
+        // Exemplary payload
+        var payload = { test: "test22" };
+        // Verify the payload if necessary (i.e. when possibly incomplete or invalid)
+        //let obj = new  gp.AwesomeMessage22();
+        var errMsg = gp.AwesomeMessage22.verify(payload);
+        // let d = new gp.AwesomeMessage22()
+        // d.verify()
+        if (errMsg)
+            throw Error(errMsg);
+        // Create a new message
+        var message = gp.AwesomeMessage22.create(payload); // or use .fromObject if conversion is necessary
+        console.log('message', message);
+        // Encode a message to an Uint8Array (browser) or Buffer (node)
+        var buffer = gp.AwesomeMessage22.encode(message).finish();
+        this.socket.send(buffer);
     };
-    SocketClient.prototype.onopen = function () {
+    SocketClient.prototype.onopen = function (cb) {
         Logger.error('The connect begin!');
     };
     SocketClient.prototype.onerror = function () {
@@ -170,7 +187,19 @@ var SocketClient = (function (_super) {
         var data = event.data;
         this.messageList.push(this.decode(data));
     };
-    SocketClient.prototype.decode = function (data) {
+    SocketClient.prototype.decode = function (buffer) {
+        var message = gp.AwesomeMessage.decode(buffer); // 接受的是这个
+        // ... do something with message
+        console.log('message', message);
+        // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
+        // Maybe convert the message back to a plain object
+        var object = gp.AwesomeMessage.toObject(message, {
+            longs: String,
+            enums: String,
+            bytes: String,
+        });
+        console.log('object', object);
+        return object;
     };
     SocketClient.prototype.addMessageToProcess = function () {
     };

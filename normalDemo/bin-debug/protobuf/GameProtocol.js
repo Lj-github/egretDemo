@@ -4,12 +4,16 @@ var gp;
         protobuf.load(protoPath, function (err, root) {
             if (err)
                 throw err;
+            //gt.setProp(gp,root.nested)
+            for (var ket in root.nested) {
+                gp[ket] = root.lookupType(ket);
+            }
+            cb.call(tar);
             // Obtain a message type
             // 不使用id  使用消息名字吧
-            var AwesomeMessage = root.lookupType("AwesomeMessage22"); // 需要package   和那个 消息名字 对应起来  就可以
-            //所有可以压缩的 然后 就是  key value
-            gt.setProp(gp, root.nested);
-            cb.call(tar);
+            // var AwesomeMessage = root.lookupType("AwesomeMessage22"); // 需要package   和那个 消息名字 对应起来  就可以
+            // //所有可以压缩的 然后 就是  key value
+            //
             // // Exemplary payload
             // var payload = {test: "test"};
             // // Verify the payload if necessary (i.e. when possibly incomplete or invalid)

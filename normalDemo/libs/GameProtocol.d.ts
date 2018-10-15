@@ -1,11 +1,14 @@
-declare module gp{
 
-    export class AwesomeMessage  {
-        // 好友列表
-        awesomeField?: Array<number>
+declare module gp{
+    // 活动详情
+
+    class _AwesomeMessage extends protobuf.Type {
+        awesomeField?:string
     }
-    export class AwesomeMessage22 {
-        id :number;
+    var AwesomeMessage:_AwesomeMessage;
+    class _AwesomeMessage22 extends protobuf.Type {
         test:string;
     }
+    var AwesomeMessage22:_AwesomeMessage22;
+
 }

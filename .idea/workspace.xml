@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="dd4100fc-8628-4cb6-8885-a0a8184c9dce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/normalDemo/bin-debug/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/bin-debug/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/normalDemo/bin-debug/protobuf/GameProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/bin-debug/protobuf/GameProtocol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/normalDemo/bin-debug/protobuf/SocketClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/bin-debug/protobuf/SocketClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/normalDemo/libs/GameProtocol.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/libs/GameProtocol.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/normalDemo/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/normalDemo/src/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/src/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +24,17 @@
       <file leaf-file-name="Main.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalDemo/src/Main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="320">
+              <caret line="78" column="39" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketClient.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="146" column="56" lean-forward="true" selection-start-line="146" selection-start-column="56" selection-end-line="146" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -31,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="98" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="10" selection-end-column="98" />
+              <caret line="10" column="98" selection-start-line="9" selection-start-column="5" selection-end-line="10" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -39,8 +51,8 @@
       <file leaf-file-name="protobuf-library.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/protobuf/bin/protobuf-library.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="1142" column="26" selection-start-line="1142" selection-start-column="21" selection-end-line="1142" selection-end-column="26" />
+            <state relative-caret-position="195">
+              <caret line="2577" column="31" selection-start-line="2577" selection-start-column="21" selection-end-line="2577" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -48,17 +60,17 @@
       <file leaf-file-name="GameProtocol.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+            <state relative-caret-position="116">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameProtocol.d.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/normalDemo/libs/GameProtocol.d.ts">
+      <file leaf-file-name="protobuf-library.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/protobuf/libs/protobuf-library.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="195">
+              <caret line="1451" column="4" selection-start-line="1451" selection-start-column="4" selection-end-line="1451" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -68,15 +80,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" selection-start-line="1" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketClient.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -116,9 +119,16 @@
       <find>$onAddToStage</find>
       <find>$onRemoveFromStage</find>
       <find>onRemove</find>
+      <find>Message</find>
       <find>strin</find>
       <find>connectToCoreServer</find>
+      <find>messageList</find>
+      <find>messageProcess</find>
+      <find>makeMessageProcess</find>
       <find>AwesomeMessage</find>
+      <find>verify</find>
+      <find>buffer</find>
+      <find>onmessage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,11 +159,11 @@
         <option value="$PROJECT_DIR$/normalDemo/src/com/Logger.ts" />
         <option value="$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts" />
         <option value="$PROJECT_DIR$/normalDemo/src/com/Gt.ts" />
-        <option value="$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts" />
-        <option value="$PROJECT_DIR$/normalDemo/src/Main.ts" />
         <option value="$PROJECT_DIR$/normalDemo/libs/GameProtocol.d.ts" />
+        <option value="$PROJECT_DIR$/normalDemo/src/Main.ts" />
+        <option value="$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts" />
+        <option value="$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts" />
       </list>
     </option>
   </component>
@@ -164,8 +174,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="62" />
+    <option name="x" value="32" />
+    <option name="y" value="141" />
     <option name="width" value="1920" />
     <option name="height" value="981" />
   </component>
@@ -194,6 +204,39 @@
               <item name="egretDemo" type="462c0819:PsiDirectoryNode" />
               <item name="normalDemo" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="egretDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="egretDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="normalDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="gameModules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="egretDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="egretDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="normalDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="gameModules" type="462c0819:PsiDirectoryNode" />
+              <item name="protobuf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="egretDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="egretDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="normalDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="gameModules" type="462c0819:PsiDirectoryNode" />
+              <item name="protobuf" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="egretDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="egretDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="normalDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="gameModules" type="462c0819:PsiDirectoryNode" />
+              <item name="protobuf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="egretDemo" type="b2602c69:ProjectViewProjectNode" />
@@ -295,7 +338,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="62" width="1920" height="981" extended-state="0" />
+    <frame x="32" y="141" width="1920" height="981" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -304,7 +347,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.18002322" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21718931" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19275825" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -329,8 +372,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/libs/modules/eui/eui.d.ts" />
-    <entry file="file://$PROJECT_DIR$/app/libs/modules/egret/egret.d.ts" />
     <entry file="file://$PROJECT_DIR$/app/src/component/PbButton.ts" />
     <entry file="file://$PROJECT_DIR$/app/src/component/PbDisplayObjectContainer.ts" />
     <entry file="file://$PROJECT_DIR$/app/src/component/EImage.ts" />
@@ -493,13 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puremvc/bin-debug/com/Logger.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -531,20 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/protobuf/bin/protobuf-library.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="1142" column="26" selection-start-line="1142" selection-start-column="21" selection-end-line="1142" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/normalDemo/libs/Game.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -559,27 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/src/Main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="98" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="10" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../assets/pikachu/sanguo/aiweiyou_pokmon/pokmon_weixin/tools/exceltojson/cpp/ChongzhipaihangDef.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -587,10 +586,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../assets/pikachu/sanguo/aiweiyou_pokmon/pokmon_weixin/tools/exceltojson/makeUpdateSql.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="182" column="14" lean-forward="true" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="274" column="4" selection-start-line="274" selection-start-column="4" selection-end-line="274" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/protobuf/libs/protobuf-library.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="1451" column="4" selection-start-line="1451" selection-start-column="4" selection-end-line="1451" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/normalDemo/libs/GameProtocol.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="98" selection-start-line="9" selection-start-column="5" selection-end-line="10" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/protobuf/bin/protobuf-library.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="2577" column="31" selection-start-line="2577" selection-start-column="21" selection-end-line="2577" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/GameProtocol.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/src/Main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="78" column="39" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="146" column="56" lean-forward="true" selection-start-line="146" selection-start-column="56" selection-end-line="146" selection-end-column="56" />
         </state>
       </provider>
     </entry>

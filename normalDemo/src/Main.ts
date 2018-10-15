@@ -62,6 +62,10 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
+         gt.size = {
+                    width: egret.MainContext.instance.stage.stageWidth,
+                    height: egret.MainContext.instance.stage.stageHeight
+                };
         gp.initAllMessage("resource/proto/awesome.proto",()=>{
             // 自动寻路  例子
             let p = new Game()
@@ -69,16 +73,18 @@ class Main extends egret.DisplayObjectContainer {
             this.addChild(p );
             gt.SocketClient = new SocketClient()
             //ws://localhost:
-            // gt.SocketClient.connectToCoreServer("localhost","8081/socket")
-            // gt.SocketClient.registerOnEvent(1,this.onres,this)
-            gt.size = {
-                width: egret.MainContext.instance.stage.stageWidth,
-                height: egret.MainContext.instance.stage.stageHeight
-            };
-            let msg = new gp.DeleteFriendMessageReq()
-
+            gt.SocketClient.connectToCoreServer("localhost","8081/socket",()=>{
+                gt.SocketClient.registerOnEvent(gp.AwesomeMessage22,this.onres,this)
+                // let msg = new gp.AwesomeMessage()
+                // gt.SocketClient.send(msg)
+            },this)
 
         },this)
+
+    }
+    onres(msg:gp._AwesomeMessage22){
+        console.log(msg)
+        console.log(msg.test)
 
     }
 
