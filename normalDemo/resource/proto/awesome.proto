@@ -1,5 +1,15 @@
 // awesome.proto 所有的proto  放这就行  java 里面 的 分开  egret  里面的  合起来
 syntax = "proto3";
+enum NetMessageCmd
+{
+
+ID_LOGIN_REQUEST = 1000;
+ID_LOGIN_RESPONSE = 1002;
+ID_MATE_REQUEST = 1003;
+ID_MATE_RESPONSE = 1004;
+ID_SENDCARD_REQUEST = 1005;
+ID_SENDCARD_RESPONSE = 1006;
+}
 
 
 message AwesomeMessage {

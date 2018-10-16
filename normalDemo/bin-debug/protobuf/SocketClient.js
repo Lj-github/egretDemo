@@ -118,6 +118,7 @@ var SocketClient = (function (_super) {
         return;
     };
     SocketClient.prototype.connectToCoreServer = function (host, port, cb, cbTar) {
+        var _this = this;
         // timeOutReconnectClear()
         // timeOutReconnectInit()
         var self = this;
@@ -134,7 +135,7 @@ var SocketClient = (function (_super) {
             }
             var url = preStr + host + ':' + port;
             socket = new WebSocket(url);
-            //socket.binaryType = "arraybuffer" // We are talking binary
+            socket.binaryType = "arraybuffer"; // We are talking binary
             //链接失败
             socket.onerror = this.onerror;
             // 连接成功
@@ -144,7 +145,11 @@ var SocketClient = (function (_super) {
             // 断开连接
             socket.onclose = this.onclose;
             // 收到指令
-            socket.onmessage = this.onmessage;
+            var self_1 = this;
+            socket.onmessage = function (event) {
+                var data = event.data;
+                self_1.messageList.push(_this.decode(data));
+            };
             this.socket = socket;
             this.beginIntvall();
         }
@@ -183,17 +188,16 @@ var SocketClient = (function (_super) {
     SocketClient.prototype.onclose = function () {
         Logger.error('The connect is lost!');
     };
-    SocketClient.prototype.onmessage = function (event) {
-        var data = event.data;
-        this.messageList.push(this.decode(data));
-    };
     SocketClient.prototype.decode = function (buffer) {
-        var message = gp.AwesomeMessage.decode(buffer); // 接受的是这个
+        var dataview = new DataView(buffer);
+        var unit8 = new Uint8Array(dataview.buffer, dataview.byteOffset, dataview.byteLength);
+        var message = gp.AwesomeMessage22.decode(unit8); // 接受的是这个
         // ... do something with message
         console.log('message', message);
         // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
         // Maybe convert the message back to a plain object
-        var object = gp.AwesomeMessage.toObject(message, {
+        //.content
+        var object = gp.AwesomeMessage22.toObject(message, {
             longs: String,
             enums: String,
             bytes: String,

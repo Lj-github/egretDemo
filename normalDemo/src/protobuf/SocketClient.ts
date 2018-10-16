@@ -10,12 +10,13 @@ class SocketClient extends egret.HashObject {
 
     }
 
-    public beginIntvall(){
+    public beginIntvall() {
         let self = this
         this.makeMessageIntall = window.setInterval(function () {
             self.makeMessageProcess()
         }, 33)
     }
+
     // public static getInstance(): SocketClient {
     //
     //     if (!this._instance)
@@ -115,7 +116,7 @@ class SocketClient extends egret.HashObject {
         return
     }
 
-    public connectToCoreServer(host:String, port:string,cb:Function,cbTar:any) {
+    public connectToCoreServer(host: String, port: string, cb: Function, cbTar: any) {
         // timeOutReconnectClear()
         // timeOutReconnectInit()
         let self = this
@@ -131,20 +132,21 @@ class SocketClient extends egret.HashObject {
             }
             let url = preStr + host + ':' + port
             socket = new WebSocket(url)
-            //socket.binaryType = "arraybuffer" // We are talking binary
+            socket.binaryType = "arraybuffer" // We are talking binary
             //链接失败
             socket.onerror = this.onerror
             // 连接成功
-            socket.onopen = ()=>{
+            socket.onopen = () => {
                 cb.call(cbTar)
             } //this.onopen.call(cb)
             // 断开连接
             socket.onclose = this.onclose
 
             // 收到指令
-            socket.onmessage =(event)=>{
+            let self = this
+            socket.onmessage = (event) => {
                 let data = event.data
-                this.messageList.push(this.decode(data))
+                self.messageList.push(this.decode(data))
 
             }
             this.socket = socket
@@ -161,7 +163,7 @@ class SocketClient extends egret.HashObject {
         var payload = {test: "test22"};
         // Verify the payload if necessary (i.e. when possibly incomplete or invalid)
         //let obj = new  gp.AwesomeMessage22();
-        var errMsg =  gp.AwesomeMessage22.verify(payload);
+        var errMsg = gp.AwesomeMessage22.verify(payload);
         // let d = new gp.AwesomeMessage22()
         // d.verify()
         if (errMsg)
@@ -170,12 +172,12 @@ class SocketClient extends egret.HashObject {
         var message = gp.AwesomeMessage22.create(payload); // or use .fromObject if conversion is necessary
         console.log('message', message)
         // Encode a message to an Uint8Array (browser) or Buffer (node)
-        var buffer =  gp.AwesomeMessage22.encode(message).finish();
+        var buffer = gp.AwesomeMessage22.encode(message).finish();
         this.socket.send(buffer)
 
     }
 
-    public onopen(cb:Function) {
+    public onopen(cb: Function) {
 
 
         Logger.error('The connect begin!')
@@ -190,14 +192,19 @@ class SocketClient extends egret.HashObject {
     }
 
 
-    decode(buffer:Uint8Array){
-
-        var message =gp.AwesomeMessage.decode(buffer); // 接受的是这个
+    public decode(buffer) {
+        var dataview = new DataView(buffer);
+        var unit8 = new Uint8Array(dataview.buffer, dataview.byteOffset, dataview.byteLength);
+        var message = gp.AwesomeMessage22.decode(unit8); // 接受的是这个
         // ... do something with message
         console.log('message', message)
         // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
         // Maybe convert the message back to a plain object
-        var object =gp.AwesomeMessage.toObject(message, {
+        //.content
+         // byte.writeInt32(MSG_HEADER.LoginGame);//和服务端约定好，前四个字节存放协议的名称
+//https://blog.csdn.net/keyunq/article/details/81164413
+        //https://my.oschina.net/cxh3905/blog/293000   enum
+        var object = gp.AwesomeMessage22.toObject(message, {
             longs: String,
             enums: String,
             bytes: String,
@@ -206,7 +213,8 @@ class SocketClient extends egret.HashObject {
         console.log('object', object)
         return object
     }
-    addMessageToProcess(){
+
+    addMessageToProcess() {
 
     }
 
@@ -234,7 +242,7 @@ class SocketClient extends egret.HashObject {
                 return !event.once
             })
 
-           this.eventMaps[key] = keeps
+            this.eventMaps[key] = keeps
         }
 
         // //需要跳转到登陆界面的error特殊处理

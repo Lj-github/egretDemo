@@ -8,6 +8,7 @@ module gp{
 
             //gt.setProp(gp,root.nested)
             for (let ket in root.nested){
+                if (  "" ){}
                 gp[ket] = root.lookupType(ket)
             }
             cb.call(tar)
@@ -30,6 +31,7 @@ module gp{
             // // ... do something with buffer
             // console.log('buffer', buffer)  // 给服务器发送 这个
             // // Decode an Uint8Array (browser) or Buffer (node) to a message
+
             // var message = AwesomeMessage.decode(buffer); // 接受的是这个
             // // ... do something with message
             // console.log('message', message)
