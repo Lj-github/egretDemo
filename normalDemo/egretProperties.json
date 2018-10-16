@@ -42,6 +42,10 @@
     {
       "name": "protobuf",
       "path": "libs/gameModules/protobuf"
+    },
+    {
+      "name": "socketIO",
+      "path": "libs/gameModules/socketIO"
     }
   ]
 }

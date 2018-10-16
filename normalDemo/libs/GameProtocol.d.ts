@@ -1,6 +1,16 @@
 
 declare module gp{
     // 活动详情
+     module NetMessageCmd {
+         enum  values
+        {
+            AwesomeMessage = 1000,
+            AwesomeMessage22 = 1002
+        }
+
+    }
+
+
 
     class _AwesomeMessage extends protobuf.Type {
         awesomeField?:string

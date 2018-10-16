@@ -7,9 +7,13 @@ module gp{
                 throw err;
 
             //gt.setProp(gp,root.nested)
-            for (let ket in root.nested){
-                if (  "" ){}
-                gp[ket] = root.lookupType(ket)
+            for (let  ket in root.nested){
+                let key :any = ket
+                if (  root.nested[key] instanceof protobuf.Type ){
+                    gp[ket] = root.lookupType(ket)
+                }else if(root.nested[key] instanceof protobuf.Enum){
+                    gp[ket] = root.lookupEnum(ket)
+                }
             }
             cb.call(tar)
             // Obtain a message type

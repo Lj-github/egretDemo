@@ -6,7 +6,13 @@ var gp;
                 throw err;
             //gt.setProp(gp,root.nested)
             for (var ket in root.nested) {
-                gp[ket] = root.lookupType(ket);
+                var key = ket;
+                if (root.nested[key] instanceof protobuf.Type) {
+                    gp[ket] = root.lookupType(ket);
+                }
+                else if (root.nested[key] instanceof protobuf.Enum) {
+                    gp[ket] = root.lookupEnum(ket);
+                }
             }
             cb.call(tar);
             // Obtain a message type

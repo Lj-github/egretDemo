@@ -161,18 +161,24 @@ class SocketClient extends egret.HashObject {
     public send(packet, isSyncMessage?: boolean) {
         // Exemplary payload
         var payload = {test: "test22"};
-        // Verify the payload if necessary (i.e. when possibly incomplete or invalid)
-        //let obj = new  gp.AwesomeMessage22();
+
+        //let msgClass = packet.name
         var errMsg = gp.AwesomeMessage22.verify(payload);
-        // let d = new gp.AwesomeMessage22()
-        // d.verify()
+
         if (errMsg)
             throw Error(errMsg);
-        // Create a new message
         var message = gp.AwesomeMessage22.create(payload); // or use .fromObject if conversion is necessary
         console.log('message', message)
         // Encode a message to an Uint8Array (browser) or Buffer (node)
         var buffer = gp.AwesomeMessage22.encode(message).finish();
+
+
+        let msgID = gp.NetMessageCmd.values.AwesomeMessage22
+
+        let  d = new ArrayBuffer(buffer.byteLength+5);
+
+       // buffer.writeInt32(msgID);//和服务端约定好，前四个字节存放协议的名称
+
         this.socket.send(buffer)
 
     }
@@ -193,16 +199,22 @@ class SocketClient extends egret.HashObject {
 
 
     public decode(buffer) {
+
+        //  gp.NetMessageCmd.values.ID_LOGIN_REQUEST  消息id
+
+
+
         var dataview = new DataView(buffer);
         var unit8 = new Uint8Array(dataview.buffer, dataview.byteOffset, dataview.byteLength);
+        //let msgID = new
         var message = gp.AwesomeMessage22.decode(unit8); // 接受的是这个
         // ... do something with message
         console.log('message', message)
         // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
         // Maybe convert the message back to a plain object
         //.content
-         // byte.writeInt32(MSG_HEADER.LoginGame);//和服务端约定好，前四个字节存放协议的名称
-//https://blog.csdn.net/keyunq/article/details/81164413
+
+        //https://blog.csdn.net/keyunq/article/details/81164413
         //https://my.oschina.net/cxh3905/blog/293000   enum
         var object = gp.AwesomeMessage22.toObject(message, {
             longs: String,
