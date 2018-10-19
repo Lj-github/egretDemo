@@ -209,27 +209,23 @@ class SocketClient extends egret.HashObject {
         Logger.error('The connect is lost!')
     }
 
+    private getNumBy4Byte(arr:Uint8Array):number{
+       return arr[0]* Math.pow(256,3) + arr[1]* Math.pow(256,2) +arr[2]* Math.pow(256,1) +arr[3]* Math.pow(256,0)
+    }
 
     public decode(buffer) {
 
         //  gp.NetMessageCmd.values.ID_LOGIN_REQUEST  消息id
-
         var dataview = new DataView(buffer);
         var unit8 = new Uint8Array(dataview.buffer, dataview.byteOffset, dataview.byteLength);
-
         var resBuffer = unit8.slice(8);
-        let
-        let msgId =
-        var resExchangeKey = ExchangeKey.decode(resBuffer);
-        var exchangeKeyRes = resExchangeKey.getExchangeKeyRes();
-        var rc4Key = exchangeKeyRes.getKey();
-        var rc4KeyBase64 = rc4Key.toBase64();
-        rc4key = crypt.decrypt(rc4KeyBase64);
-
+        let len  = this.getNumBy4Byte(unit8.slice(0,4)) ;
+        let msgID =  this.getNumBy4Byte(unit8.slice(4,8));
 
         var message = gp.AwesomeMessage22.decode(resBuffer); // 接受的是这个
         // ... do something with message
         console.log('message', message)
+        console.log("msgID ",msgID)
         // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
         // Maybe convert the message back to a plain object
         //.content

@@ -199,14 +199,20 @@ var SocketClient = (function (_super) {
     SocketClient.prototype.onclose = function () {
         Logger.error('The connect is lost!');
     };
+    SocketClient.prototype.getNumBy4Byte = function (arr) {
+        return arr[0] * Math.pow(256, 3) + arr[1] * Math.pow(256, 2) + arr[2] * Math.pow(256, 1) + arr[3] * Math.pow(256, 0);
+    };
     SocketClient.prototype.decode = function (buffer) {
         //  gp.NetMessageCmd.values.ID_LOGIN_REQUEST  消息id
         var dataview = new DataView(buffer);
         var unit8 = new Uint8Array(dataview.buffer, dataview.byteOffset, dataview.byteLength);
-        //let msgID = new
-        var message = gp.AwesomeMessage22.decode(unit8); // 接受的是这个
+        var resBuffer = unit8.slice(8);
+        var len = this.getNumBy4Byte(unit8.slice(0, 4));
+        var msgID = this.getNumBy4Byte(unit8.slice(4, 8));
+        var message = gp.AwesomeMessage22.decode(resBuffer); // 接受的是这个
         // ... do something with message
         console.log('message', message);
+        console.log("msgID ", msgID);
         // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
         // Maybe convert the message back to a plain object
         //.content

@@ -19,8 +19,8 @@
       <file leaf-file-name="SocketClient.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="221" column="36" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="36" />
+            <state relative-caret-position="258">
+              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
             </state>
           </provider>
         </entry>
@@ -28,7 +28,7 @@
       <file leaf-file-name="lib.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
+            <state relative-caret-position="23392">
               <caret line="1389" column="5" selection-start-line="1389" selection-start-column="5" selection-end-line="1389" selection-end-column="5" />
             </state>
           </provider>
@@ -52,15 +52,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="protobuf-library.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/protobuf/bin/protobuf-library.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43605">
-              <caret line="2565" selection-start-line="2565" selection-end-line="2565" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="awesome.proto" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalDemo/resource/proto/awesome.proto">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,20 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="long.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/normalDemo/libs/gameModules/socketIO/bin/long.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/normalDemo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="51">
+              <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -164,8 +146,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1981" />
-    <option name="y" value="23" />
+    <option name="x" value="53" />
+    <option name="y" value="108" />
     <option name="width" value="1920" />
     <option name="height" value="979" />
   </component>
@@ -328,31 +310,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1981" y="23" width="1920" height="979" extended-state="0" />
-    <editor active="true" />
+    <frame x="129" y="114" width="1920" height="979" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3073341" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23981373" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20127796" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20340788" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/normalDemo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../../../EgretProjects/mahjong/src/socket/GameSocket.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -690,7 +664,7 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
+        <state relative-caret-position="23392">
           <caret line="1389" column="5" selection-start-line="1389" selection-start-column="5" selection-end-line="1389" selection-end-column="5" />
         </state>
       </provider>
@@ -698,14 +672,21 @@
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
-          <caret line="1416" column="13" selection-start-line="1416" selection-start-column="13" selection-end-line="1416" selection-end-column="13" />
+          <caret line="2018" column="4" selection-start-line="2018" selection-start-column="4" selection-end-line="2018" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalDemo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/normalDemo/src/protobuf/SocketClient.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="221" column="36" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="36" />
+        <state relative-caret-position="258">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
         </state>
       </provider>
     </entry>
