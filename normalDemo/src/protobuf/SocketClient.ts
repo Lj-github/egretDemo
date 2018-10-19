@@ -1,3 +1,5 @@
+
+
 class SocketClient extends egret.HashObject {
     private static _instance: SocketClient
     eventMaps = {}
@@ -162,6 +164,13 @@ class SocketClient extends egret.HashObject {
         // Exemplary payload
         var payload = {test: "test22"};
 
+        let dd = new gp.loginC2S();
+        dd.name = "5";
+        gp.loginC2S.verify(dd);
+
+
+
+
         //let msgClass = packet.name
         var errMsg = gp.AwesomeMessage22.verify(payload);
 
@@ -221,6 +230,9 @@ class SocketClient extends egret.HashObject {
         var resBuffer = unit8.slice(8);
         let len  = this.getNumBy4Byte(unit8.slice(0,4)) ;
         let msgID =  this.getNumBy4Byte(unit8.slice(4,8));
+        //MSG_HEADER.loginS2C
+
+
 
         var message = gp.AwesomeMessage22.decode(resBuffer); // 接受的是这个
         // ... do something with message
