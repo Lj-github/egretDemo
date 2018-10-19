@@ -170,13 +170,22 @@ var SocketClient = (function (_super) {
         console.log('message', message);
         // Encode a message to an Uint8Array (browser) or Buffer (node)
         var buffer = gp.AwesomeMessage22.encode(message).finish();
-        var test = new Uint8Array([1, 5, 5]);
+        //   unit8Buffer.buffer  就是 arraybuffer  使用dataview 打包数据
         var msgID = gp.NetMessageCmd.values.AwesomeMessage22;
-        var msg = new egret.ByteArray();
-        msg.writeInt(msgID);
-        msg._writeUint8Array(buffer);
-        // buffer.writeInt32(msgID);//和服务端约定好，前四个字节存放协议的名称
-        this.socket.send(msg);
+        var d = new ArrayBuffer(buffer.byteLength + 5);
+        var bet = new ArrayBuffer(5);
+        //let bet1 =  bet.writeInt32(msgID);//和服务端约定好，前四个字节存放协议的名称
+        var length = buffer.byteLength;
+        var dataView = new DataView(new ArrayBuffer(length + 8));
+        var msgDecView = new DataView(buffer.buffer);
+        //set
+        dataView.setUint32(0, length, false);
+        dataView.setUint32(4, 10000, false); //10000   应该就是消息 id
+        for (var i = 0; i < length; i++) {
+            dataView.setUint8(i + 8, msgDecView.getUint8(i));
+        }
+        console.log(dataView.buffer);
+        this.socket.send(dataView.buffer);
     };
     SocketClient.prototype.onopen = function (cb) {
         Logger.error('The connect begin!');

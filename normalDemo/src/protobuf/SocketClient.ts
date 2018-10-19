@@ -172,14 +172,26 @@ class SocketClient extends egret.HashObject {
         // Encode a message to an Uint8Array (browser) or Buffer (node)
         var buffer = gp.AwesomeMessage22.encode(message).finish();
 
-
+        //   unit8Buffer.buffer  就是 arraybuffer  使用dataview 打包数据
         let msgID = gp.NetMessageCmd.values.AwesomeMessage22
 
-        let  d = new ArrayBuffer(buffer.byteLength+5);
+        let d = new ArrayBuffer(buffer.byteLength + 5);
+        let bet = new ArrayBuffer(5);
 
-       // buffer.writeInt32(msgID);//和服务端约定好，前四个字节存放协议的名称
+        //let bet1 =  bet.writeInt32(msgID);//和服务端约定好，前四个字节存放协议的名称
 
-        this.socket.send(buffer)
+
+        var length = buffer.byteLength;
+        var dataView = new DataView(new ArrayBuffer(length + 8));
+        var msgDecView = new DataView(buffer.buffer);
+        //set
+        dataView.setUint32(0, length, false);
+        dataView.setUint32(4, 10000, false);  //10000   应该就是消息 id
+        for (var i = 0; i < length; i++) {
+            dataView.setUint8(i + 8, msgDecView.getUint8(i));
+        }
+        console.log(dataView.buffer)
+        this.socket.send(dataView.buffer)
 
     }
 
@@ -202,12 +214,20 @@ class SocketClient extends egret.HashObject {
 
         //  gp.NetMessageCmd.values.ID_LOGIN_REQUEST  消息id
 
-
-
         var dataview = new DataView(buffer);
         var unit8 = new Uint8Array(dataview.buffer, dataview.byteOffset, dataview.byteLength);
-        //let msgID = new
-        var message = gp.AwesomeMessage22.decode(unit8); // 接受的是这个
+
+        var resBuffer = unit8.slice(8);
+        let
+        let msgId =
+        var resExchangeKey = ExchangeKey.decode(resBuffer);
+        var exchangeKeyRes = resExchangeKey.getExchangeKeyRes();
+        var rc4Key = exchangeKeyRes.getKey();
+        var rc4KeyBase64 = rc4Key.toBase64();
+        rc4key = crypt.decrypt(rc4KeyBase64);
+
+
+        var message = gp.AwesomeMessage22.decode(resBuffer); // 接受的是这个
         // ... do something with message
         console.log('message', message)
         // If the application uses length-delimited buffers, there is also encodeDelimited and decodeDelimited.
