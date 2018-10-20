@@ -164,25 +164,28 @@ class SocketClient extends egret.HashObject {
         // Exemplary payload
         var payload = {test: "test22"};
 
-        let dd = new gp.loginC2S();
+        let dd = new pb.loginC2S();
         dd.name = "5";
+        dd.sex = "test";
         gp.loginC2S.verify(dd);
 
 
+        let msgID = dd["msdID"]
 
+        delete dd["msdID"]
+        //gp.MSG_HEADER.loginS2C
 
         //let msgClass = packet.name
-        var errMsg = gp.AwesomeMessage22.verify(payload);
-
+        var errMsg = gp.loginC2S.verify(dd);
         if (errMsg)
             throw Error(errMsg);
-        var message = gp.AwesomeMessage22.create(payload); // or use .fromObject if conversion is necessary
+
+        var message = gp.loginC2S.create(dd); // or use .fromObject if conversion is necessary
         console.log('message', message)
         // Encode a message to an Uint8Array (browser) or Buffer (node)
-        var buffer = gp.AwesomeMessage22.encode(message).finish();
+        var buffer = gp.loginC2S.encode(message).finish();
 
         //   unit8Buffer.buffer  就是 arraybuffer  使用dataview 打包数据
-        let msgID = gp.NetMessageCmd.values.AwesomeMessage22
 
         let d = new ArrayBuffer(buffer.byteLength + 5);
         let bet = new ArrayBuffer(5);
@@ -233,8 +236,7 @@ class SocketClient extends egret.HashObject {
         //MSG_HEADER.loginS2C
 
 
-
-        var message = gp.AwesomeMessage22.decode(resBuffer); // 接受的是这个
+        var message = gp.loginS2C .decode(resBuffer); // 接受的是这个
         // ... do something with message
         console.log('message', message)
         console.log("msgID ",msgID)
@@ -244,7 +246,7 @@ class SocketClient extends egret.HashObject {
 
         //https://blog.csdn.net/keyunq/article/details/81164413
         //https://my.oschina.net/cxh3905/blog/293000   enum
-        var object = gp.AwesomeMessage22.toObject(message, {
+        var object = gp.loginS2C.toObject(message, {
             longs: String,
             enums: String,
             bytes: String,

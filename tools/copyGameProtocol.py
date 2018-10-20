@@ -38,17 +38,30 @@ def copyfile(srcfile, dstfile):
 
 copyfile("/Users/admin/Documents/ljworkspace/local/java/serverDemo/tools/GameProtocol.d.ts",
          "/Users/admin/Documents/ljworkspace/local/cocos/workPro/cocosjsDemo/egretDemo/normalDemo/libs/GameProtocol.d.ts")
+copyfile("/Users/admin/Documents/ljworkspace/local/java/serverDemo/tools/GameProtocol.d.ts",
+         "/Users/admin/Documents/ljworkspace/local/cocos/workPro/cocosjsDemo/egretDemo/normalDemo/libs/GameProtocol2.d.ts")
 copyfile("/Users/admin/Documents/ljworkspace/local/java/serverDemo/proto/GameProtocol.proto",
          "/Users/admin/Documents/ljworkspace/local/cocos/workPro/cocosjsDemo/egretDemo/normalDemo/resource/proto/GameProtocol.proto")
 
 filee = os.path.realpath(__file__)
 fpath,fname = os.path.split(filee)
+#sed 命令  像个屎
 
 GameProtocoldtsFile = "/Users/admin/Documents/ljworkspace/local/cocos/workPro/cocosjsDemo/egretDemo/normalDemo/libs/GameProtocol.d.ts"
-#os.system("sed -i '' '1d' " + GameProtocoldtsFile)
-#st = "sed '' '1 i\import$protobuf=protobuf\n\declaremodulegp{\n' " + GameProtocoldtsFile
-st = "sed -i '' '1i ddd' " + GameProtocoldtsFile
-print(st)
-os.system(st)
+gp2 = "/Users/admin/Documents/ljworkspace/local/cocos/workPro/cocosjsDemo/egretDemo/normalDemo/libs/GameProtocol2.d.ts"
+sel = "sed  -i '' 1,2d " + GameProtocoldtsFile
+os.system(sel)
+add =  "sed -i '' '1i\\'$'\n''import $protobuf=protobuf;declare module gp{\n' " + GameProtocoldtsFile
+os.system(add)
 os.system('echo "}" >> '+ GameProtocoldtsFile)
+
+sel = "sed  -i '' 1,2d " + gp2
+os.system(sel)
+add =  "sed -i '' '1i\\'$'\n''declare module pb{\n' " + gp2
+os.system(add)
+os.system('echo "}" >> '+ gp2)
+
+
+
+
 

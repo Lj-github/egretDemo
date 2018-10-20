@@ -1,4 +1,4 @@
-import $protobuf=protobuf;declare module gp{
+declare module pb{
 export enum MSG_HEADER {
     loginC2S = 1,
     loginS2C = 2

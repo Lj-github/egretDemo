@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+window["pb"] = {};
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
@@ -127,7 +128,7 @@ var Main = (function (_super) {
             width: egret.MainContext.instance.stage.stageWidth,
             height: egret.MainContext.instance.stage.stageHeight
         };
-        gp.initAllMessage("resource/proto/awesome.proto", function () {
+        gp.initAllMessage("resource/proto/GameProtocol.proto", function () {
             // 自动寻路  例子
             var p = new Game();
             p.visible = false;
@@ -135,7 +136,7 @@ var Main = (function (_super) {
             gt.SocketClient = new SocketClient();
             //ws://localhost:
             gt.SocketClient.connectToCoreServer("localhost", "8081/socket", function () {
-                gt.SocketClient.registerOnEvent(gp.AwesomeMessage22, _this.onres, _this);
+                gt.SocketClient.registerOnEvent(gp.loginS2C, _this.onres, _this);
                 // let msg = new gp.AwesomeMessage()
                 // gt.SocketClient.send(msg)
             }, _this);
@@ -143,7 +144,7 @@ var Main = (function (_super) {
     };
     Main.prototype.onres = function (msg) {
         console.log(msg);
-        console.log(msg.test);
+        console.log(msg.name);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

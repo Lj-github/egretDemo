@@ -1,28 +1,31 @@
-module gt{
+module gt {
     export const lan_cn = "ch"// 当前先写为中文
     export const lan_en = "en"// 当前先写为中文
     const lan = lan_en
     const isDebug = true
 
-    export let SocketClient:SocketClient
+    export let SocketClient: SocketClient
     export let size = {
-       // Number(document.getElementsByClassName("egret-player")[0].getAttribute("data-content-width")) ,
-       // Number(document.getElementsByClassName("egret-player")[0].getAttribute("data-content-height"))
+        // Number(document.getElementsByClassName("egret-player")[0].getAttribute("data-content-width")) ,
+        // Number(document.getElementsByClassName("egret-player")[0].getAttribute("data-content-height"))
     }
-    export function getLocalContex(id:number):string {
-        if (!LC[id] ){
+
+    export function getLocalContex(id: number): string {
+        if (!LC[id]) {
             console.error("没有定义 id = " + id + " 的文字")
             return
         }
         return LC[id][lan]
     }
-     export function log(...params) {
-        if (isDebug ) {
+
+    export function log(...params) {
+        if (isDebug) {
             return
         } else {
             console.log.apply(console, arguments)
         }
     }
+
     export enum Color {
         GREEN = 0x24d12c,
         GRAY = 0x949494,
@@ -38,27 +41,29 @@ module gt{
         BROWN_SHALLOW = 0x5B4221,
         YEL_SHALLOW = 0xFEF0C3,
         YELLOW = 0xf9ee12,
-      }
+    }
 
     /**
      * 判断是否安装 MetaMask   通过他的 js 文件 判断
      */
 
     export const metaMaskUrl = "https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en"
+
     export function isInstallMetaMask() {
-      // 检查web3是否已经注入到(Mist/MetaMask)
-      if (typeof window["web3"]!== 'undefined') {
+        // 检查web3是否已经注入到(Mist/MetaMask)
+        if (typeof window["web3"] !== 'undefined') {
             // 使用 Mist/MetaMask 的提供者
-           // web3js = new Web3(web3.currentProvider);
-      } else {
+            // web3js = new Web3(web3.currentProvider);
+        } else {
             alert("没有安装 MetaMask")
-      }
+        }
 
-      // // 现在你可以启动你的应用并自由访问 Web3.js:
-      // startApp()
+        // // 现在你可以启动你的应用并自由访问 Web3.js:
+        // startApp()
 
-     }
-     export function setProp(tgt, props) {
+    }
+
+    export function setProp(tgt, props) {
         if (!tgt || !props) {
             return
         }
@@ -66,6 +71,7 @@ module gt{
             tgt[key] = props[key]
         }
     }
+
     export function arrayWeighting(arr: Array<any>) {
         let hasMap = {}
         let list1 = []
@@ -79,11 +85,27 @@ module gt{
     }
 
     export function isHttps() {
-        return  window.location.href.indexOf('https://') == 0
+        return window.location.href.indexOf('https://') == 0
     }
 
-
-
+    export var getFnName = function (callee) {
+        var _callee = callee.toString().replace(/[\s\?]*/g, ""),
+            comb = _callee.length >= 50 ? 50 : _callee.length;
+        _callee = _callee.substring(0, comb);
+        var name = _callee.match(/^function([^\(]+?)\(/);
+        if (name && name[1]) {
+            return name[1];
+        }
+        var caller = callee.caller,
+            _caller = caller.toString().replace(/[\s\?]*/g, "");
+        var last = _caller.indexOf(_callee),
+            str = _caller.substring(last - 30, last);
+        name = str.match(/var([^\=]+?)\=/);
+        if (name && name[1]) {
+            return name[1];
+        }
+        return "anonymous"
+    };
 
 
 }

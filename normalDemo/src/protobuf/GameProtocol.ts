@@ -5,16 +5,20 @@ module gp {
             if (err)
                 throw err;
             //gt.setProp(gp,root.nested)
+            console.log(root)
             for (let ket in root.nested) {
                 let key: any = ket
                 if (root.nested[key] instanceof protobuf.Type) {
-                    gp[ket] = root.lookupType(ket)
+                    pb[ket] = root.lookupType(ket)
+                    gp[ket] = ()=>{
+                        return {"msdID":root["MSG_HEADER"][key]}
+                         //return {}
+                    }
                 } else if (root.nested[key] instanceof protobuf.Enum) {
-                    gp[ket] = root.lookupEnum(ket)
+                    pb[ket] = root.lookupEnum(ket)
                 }
             }
             cb.call(tar)
         });
-
     }
 }

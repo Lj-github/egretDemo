@@ -1,3 +1,4 @@
+window["pb"]= {}
 class Main extends egret.DisplayObjectContainer {
 
 
@@ -66,7 +67,7 @@ class Main extends egret.DisplayObjectContainer {
                     width: egret.MainContext.instance.stage.stageWidth,
                     height: egret.MainContext.instance.stage.stageHeight
                 };
-        gp.initAllMessage("resource/proto/awesome.proto",()=>{
+        gp.initAllMessage("resource/proto/GameProtocol.proto",()=>{
             // 自动寻路  例子
             let p = new Game()
             p.visible = false
@@ -74,7 +75,7 @@ class Main extends egret.DisplayObjectContainer {
             gt.SocketClient = new SocketClient()
             //ws://localhost:
             gt.SocketClient.connectToCoreServer("localhost","8081/socket",()=>{
-                gt.SocketClient.registerOnEvent(gp.AwesomeMessage22,this.onres,this)
+                gt.SocketClient.registerOnEvent(gp.loginS2C,this.onres,this)
                 // let msg = new gp.AwesomeMessage()
                 // gt.SocketClient.send(msg)
             },this)
@@ -82,9 +83,9 @@ class Main extends egret.DisplayObjectContainer {
         },this)
 
     }
-    onres(msg:gp._AwesomeMessage22){
+    onres(msg:gp.loginS2C){
         console.log(msg)
-        console.log(msg.test)
+        console.log(msg.name)
 
     }
 
